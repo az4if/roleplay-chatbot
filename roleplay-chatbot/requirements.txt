@@ -1,0 +1,12 @@
+flask
+requests
+beautifulsoup4
+torch
+accelerate
+bitsandbytes
+sentencepiece
+protobuf
+einops
+huggingface-hub
+transformers
+safetensors

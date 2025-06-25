@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Character Roleplay</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-robot"></i> AI Character Roleplay</h1>
+            <div id="model-status" class="status-indicator loading">
+                <div class="status-dot"></div>
+                <span>Loading Model...</span>
+            </div>
+        </div>
+        
+        <div id="setup-container">
+            <div class="setup-card">
+                <div class="card-header">
+                    <i class="fas fa-link"></i>
+                    <h2>Enter Character Wiki URL</h2>
+                </div>
+                <div class="input-group">
+                    <div class="input-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <input type="url" id="wiki-url" placeholder="https://example.fandom.com/wiki/Character_Name">
+                    <button id="set-character">
+                        <i class="fas fa-play"></i> Load Character
+                    </button>
+                </div>
+                <div class="examples">
+                    <p><i class="fas fa-lightbulb"></i> Try these examples:</p>
+                    <ul>
+                        <li><i class="fas fa-user"></i> https://tombraider.fandom.com/wiki/Lara_Croft</li>
+                        <li><i class="fas fa-user"></i> https://marvel.fandom.com/wiki/Tony_Stark_(Earth-616)</li>
+                        <li><i class="fas fa-user"></i> https://harrypotter.fandom.com/wiki/Harry_Potter</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="chat-container" class="hidden">
+            <div class="character-header">
+                <div class="character-avatar">
+                    <div class="avatar-border">
+                        <img id="character-img" src="{{ url_for('static', filename='icons/icon.jpg') }}" alt="Character">
+                    </div>
+                    <div class="online-indicator"></div>
+                </div>
+                <div class="character-info">
+                    <h2 id="character-name">Character</h2>
+                    <div id="speech-style" class="speech-hint">
+                        <i class="fas fa-comment-dots"></i>
+                        <span>Speech style detected</span>
+                    </div>
+                </div>
+                <button id="clear-history">
+                    <i class="fas fa-trash"></i> Clear Chat
+                </button>
+            </div>
+            
+            <div id="chat-history"></div>
+            
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <input type="text" id="user-input" placeholder="Type your message to the character...">
+                    <div class="input-actions">
+                        <button id="emoji-btn"><i class="far fa-smile"></i></button>
+                    </div>
+                </div>
+                <button id="send-btn">
+                    <i class="fas fa-paper-plane"></i> Send
+                </button>
+                <div id="typing-indicator" class="hidden">
+                    <div class="typing-loader">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <span>Character is thinking...</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div id="inference-stats">
+                <div class="stat">
+                    <i class="fas fa-clock"></i>
+                    <span>Last: <span id="last-inference-time">N/A</span></span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-stopwatch"></i>
+                    <span>Duration: <span id="last-duration">N/A</span></span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-comments"></i>
+                    <span>Total: <span id="inference-count">0</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
