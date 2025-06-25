@@ -41,7 +41,7 @@ pip install --pre torch torchvision torchaudio --index-url https://download.pyto
 **Step 5**
 
 Run **python app.py** in cmd from the directory. 
-
+And visit http://localhost:5000
 **Additional Note**
 
 # In model_handler.py __init__ method (GPU 8GB or More)
