@@ -26,6 +26,7 @@ Run git clone https://huggingface.co/PygmalionAI/pygmalion-2-7b
 or
 
 Run python download_model.py from cmd directory
+If the webui is unable to detect the model, then create a "models" folder then cd
 
 # Linux/Mac
 
