@@ -25,7 +25,7 @@ Run git clone https://huggingface.co/PygmalionAI/pygmalion-2-7b
 
 or
 
-Run download_model.py from cmd directory
+Run python download_model.py from cmd directory
 
 # Linux/Mac
 
